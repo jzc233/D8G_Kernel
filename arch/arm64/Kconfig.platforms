@@ -230,6 +230,16 @@ config ARCH_SDM660
 	  This enables support for the SDM660 chipset. If you do not
 	  wish to build a kernel that runs on this chipset, say 'N' here.
 
+config ARCH_SDM670
+	bool "Enable Support for Qualcomm Technologies Inc. SDM670"
+	depends on ARCH_QCOM
+	select COMMON_CLK
+	select COMMON_CLK_QCOM
+	select QCOM_GDSC
+	help
+	  This enables support for the SDM670 chipset. If you do not
+	  wish to build a kernel that runs on this chipset, say 'N' here.
+
 config ARCH_SDM845
 	bool "Enable Support for Qualcomm Technologies Inc. SDM845"
 	depends on ARCH_QCOM
@@ -238,6 +248,15 @@ config ARCH_SDM845
 	select QCOM_GDSC
 	help
 	  This enables support for the SDM845 chipset. If you do not
+	  wish to build a kernel that runs on this chipset, say 'N' here.
+
+config ARCH_SM8150
+	bool "Enable Support for Qualcomm Technologies, Inc. SM8150"
+	depends on ARCH_QCOM
+	select COMMON_CLK
+	select COMMON_CLK_QCOM
+	help
+	  This enables support for the SM8150 chipset. If you do not
 	  wish to build a kernel that runs on this chipset, say 'N' here.
 
 config ARCH_REALTEK
@@ -437,114 +456,5 @@ config ARCH_ZYNQMP
 	bool "Xilinx ZynqMP Family"
 	help
 	  This enables support for Xilinx ZynqMP Family
-
-menu "Xiaomi Family"
-config BOARD_XIAOMI
-	bool "Xiaomi Family"
-	help
-	  This enables support for XiaoMi Family devices.
-
-if BOARD_XIAOMI
-config BOARD_XIAOMI_SDM845
-	bool "Xiaomi SDM845 Board"
-	select ARCH_QCOM
-	select ARCH_SDM845
-
-config BOARD_XIAOMI_SM8250
-	bool "Xiaomi SM8250 Board"
-	select ARCH_QCOM
-	select ARCH_KONA
-
-config BOARD_ALIOTH
-	bool "Alioth and AliothIN platform"
-	select BOARD_XIAOMI_SM8250
-	help
-	  This enables support for Xiaomi Redmi K40 / POCO F3 / MI 11x.
-
-config BOARD_APOLLO
-	bool "Apollo and Apollopro platform"
-	select BOARD_XIAOMI_SM8250
-	help
-	  This enables support for Xiaomi MI 10T/Pro / Redmi K30S.
-
-config BOARD_CAS
-	bool "Cas platform"
-	select BOARD_XIAOMI_SM8250
-	help
-	  This enables support for Xiaomi MI 10 Ultra.
-
-config BOARD_CMI
-	bool "Cmi platform"
-	select BOARD_XIAOMI_SM8250
-	help
-	  This enables support for Xiaomi MI 10 Pro.
-
-config BOARD_DAGU
-	bool "Dagu platform"
-	select BOARD_XIAOMI_SM8250
-	help
-	  This enables support for Xiaomi Pad 5 Pro 12.4.
-
-config BOARD_E1N
-	bool "Elish platform"
-	select BOARD_XIAOMI_SDM845
-	help
-	  This enables support for Xiaomi 8.
-
-config BOARD_E10
-	bool "Elish platform"
-	select BOARD_XIAOMI_SDM845
-	help
-	  This enables support for Xiaomi Poco F1.
-
-config BOARD_ELISH
-	bool "Elish platform"
-	select BOARD_XIAOMI_SM8250
-	help
-	  This enables support for Xiaomi MI Pad 5 Pro.
-
-config BOARD_ENUMA
-	bool "Enuma platform"
-	select BOARD_XIAOMI_SM8250
-	help
-	  This enables support for Xiaomi MI Pad 5 Pro 5G.
-
-config BOARD_LMI
-	bool "Lmi, Lmiin and Lmipro platform"
-	select BOARD_XIAOMI_SM8250
-	help
-	  This enables support for Xiaomi Redmi K30 Pro / POCO F2 Pro.
-
-config BOARD_MUNCH
-	bool "munch platform"
-	select BOARD_XIAOMI_SM8250
-	help
-	  This enables support for Xiaomi Redmi K40S / POCO F4.
-
-config BOARD_PSYCHE
-	bool "Psyche platform"
-	select BOARD_XIAOMI_SM8250
-	help
-	  This enables support for Xiaomi MI 12X.
-
-config BOARD_THYME
-	bool "Thyme platform"
-	select BOARD_XIAOMI_SM8250
-	help
-	  This enables support for Xiaomi MI 10S.
-
-config BOARD_UMI
-	bool "Umi platform"
-	select BOARD_XIAOMI_SM8250
-	help
-	  This enables support for Xiaomi MI 10.
-
-endif
-endmenu
-
-config D8G_SERVICE
-	bool "d8g helper"
-	help
-	  This enables support for D8G features.
 
 endmenu
